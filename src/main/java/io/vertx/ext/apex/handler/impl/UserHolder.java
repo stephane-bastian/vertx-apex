@@ -60,7 +60,7 @@ public class UserHolder implements ClusterSerializable {
   static void setUser(RoutingContext context, User user) {
     context.setUser(user);
     Session session = context.session();
-    if (session != null && user.isClusterable()) {
+    if (session != null) {
       session.put(SESSION_USER_KEY, new UserHolder(context));
     }
   }

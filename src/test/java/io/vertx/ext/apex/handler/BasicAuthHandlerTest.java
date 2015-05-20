@@ -30,12 +30,13 @@ import io.vertx.ext.apex.sstore.impl.SessionImpl;
 import io.vertx.ext.auth.AuthProvider;
 import io.vertx.ext.auth.shiro.ShiroAuth;
 import io.vertx.ext.auth.shiro.ShiroAuthRealmType;
-import org.junit.Test;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+
+import org.junit.Test;
 
 /**
  * @author <a href="http://tfox.org">Tim Fox</a>
@@ -105,7 +106,6 @@ public class BasicAuthHandlerTest extends AuthHandlerTestBase {
       }
       assertNotNull(rc.user());
       assertEquals("tim", rc.user().principal().getString("username"));
-      assertTrue(rc.user().isClusterable());
       if (c == 7) {
         rc.setUser(null);
       }
