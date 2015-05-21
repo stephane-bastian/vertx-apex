@@ -117,9 +117,12 @@ public interface SockJSSocket extends ReadStream<Buffer>, WriteStream<Buffer> {
   String uri();
 
   /**
-   * @return the Apex session corresponding to this socket
+   * @return the session corresponding to this socket
    */
-  Session apexSession();
+  Session session();
 
-  User apexUser();
+  /**
+   * @return the user corresponding to this socket
+   */
+  User user();
 }

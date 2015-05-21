@@ -83,12 +83,12 @@ public abstract class SockJSSocketBase implements SockJSSocket {
   }
 
   @Override
-  public Session apexSession() {
+  public Session session() {
     return apexSession;
   }
 
   @Override
-  public User apexUser() {
+  public User user() {
     return apexUser;
   }
 }

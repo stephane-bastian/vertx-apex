@@ -220,7 +220,7 @@ public class EventBusBridgeImpl implements Handler<SockJSSocket> {
             Match curMatch = checkMatches(false, address, msg.body());
             if (curMatch.doesMatch) {
               if (curMatch.requiredPermission != null || curMatch.requiredRole != null) {
-                authorise(curMatch, sock.apexUser(), res -> {
+                authorise(curMatch, sock.user(), res -> {
                   if (res.succeeded()) {
                     if (res.result()) {
                       checkAddAccceptedReplyAddress(msg);
@@ -362,7 +362,7 @@ public class EventBusBridgeImpl implements Handler<SockJSSocket> {
     }
     if (curMatch.doesMatch) {
       if (curMatch.requiredPermission != null || curMatch.requiredRole != null) {
-        User apexUser = sock.apexUser();
+        User apexUser = sock.user();
         if (apexUser != null) {
           authorise(curMatch, apexUser, res -> {
             if (res.succeeded()) {
